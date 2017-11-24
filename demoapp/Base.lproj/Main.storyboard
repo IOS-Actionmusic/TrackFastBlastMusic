@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -30,7 +31,7 @@
         <!--Playlist Songs-->
         <scene sceneID="LG5-ia-Yn0">
             <objects>
-                <viewController title="Playlist Songs" id="OQW-ov-Idn" customClass="PlaylistController" customModule="demoapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Playlist Songs" automaticallyAdjustsScrollViewInsets="NO" id="OQW-ov-Idn" customClass="PlaylistController" customModule="demoapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="enu-cs-1ho">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,66 +49,69 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ejd-5h-1tf" userLabel="Album Cover">
-                                                    <rect key="frame" x="19.999999999999996" y="0.0" width="49.666666666666657" height="49.666666666666664"/>
+                                                    <rect key="frame" x="20" y="0.0" width="50" height="50.333333333333336"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ejd-5h-1tf" secondAttribute="height" multiplier="1:1" id="QtW-pW-lbk"/>
                                                         <constraint firstAttribute="height" constant="50" id="k6C-yX-zzH"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Song Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubl-4a-yBO">
-                                                    <rect key="frame" x="74.666666666666657" y="3" width="319.33333333333337" height="20.333333333333332"/>
+                                                    <rect key="frame" x="75" y="3.6666666666666661" width="319" height="20.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIB-jM-ZMG">
-                                                    <rect key="frame" x="74.666666666666657" y="28.333333333333332" width="319.33333333333337" height="15.666666666666668"/>
+                                                    <rect key="frame" x="75" y="27.000000000000004" width="319" height="15.666666666666668"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="ejd-5h-1tf" secondAttribute="bottom" id="B1G-3Y-8OF"/>
+                                                <constraint firstItem="eIB-jM-ZMG" firstAttribute="top" secondItem="Ubl-4a-yBO" secondAttribute="bottom" constant="3" id="GhQ-dV-BSB"/>
                                                 <constraint firstItem="Ubl-4a-yBO" firstAttribute="top" secondItem="TfI-sD-4iR" secondAttribute="top" constant="3" id="Km3-mU-utU"/>
                                                 <constraint firstItem="Ubl-4a-yBO" firstAttribute="leading" secondItem="ejd-5h-1tf" secondAttribute="trailing" constant="5" id="PWO-LS-jWy"/>
                                                 <constraint firstItem="ejd-5h-1tf" firstAttribute="top" secondItem="TfI-sD-4iR" secondAttribute="top" id="Ttd-Uw-q4I"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eIB-jM-ZMG" secondAttribute="bottom" constant="3" id="Zb9-ja-LHV"/>
-                                                <constraint firstItem="ejd-5h-1tf" firstAttribute="height" secondItem="TfI-sD-4iR" secondAttribute="height" id="d0i-Zq-qdI"/>
-                                                <constraint firstItem="eIB-jM-ZMG" firstAttribute="top" secondItem="Ubl-4a-yBO" secondAttribute="bottom" constant="5" id="fvO-G5-hLR"/>
                                                 <constraint firstAttribute="trailing" secondItem="eIB-jM-ZMG" secondAttribute="trailing" constant="20" symbolic="YES" id="ogh-ug-0aM"/>
                                                 <constraint firstItem="eIB-jM-ZMG" firstAttribute="leading" secondItem="ejd-5h-1tf" secondAttribute="trailing" constant="5" id="sDX-B8-sLo"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ubl-4a-yBO" secondAttribute="trailing" constant="20" symbolic="YES" id="seM-tj-6gZ"/>
                                                 <constraint firstItem="ejd-5h-1tf" firstAttribute="leading" secondItem="TfI-sD-4iR" secondAttribute="leading" constant="20" symbolic="YES" id="vpt-HV-sZD"/>
+                                                <constraint firstAttribute="bottom" secondItem="ejd-5h-1tf" secondAttribute="bottom" id="woD-Om-BVj"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="ejd-5h-1tf" firstAttribute="height" secondItem="8Ul-Ze-ZSA" secondAttribute="height" id="auZ-y1-w2A"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="albumCover" destination="ejd-5h-1tf" id="VJd-R0-CxR"/>
                                             <outlet property="artist" destination="eIB-jM-ZMG" id="0sC-GC-YXL"/>
                                             <outlet property="title" destination="Ubl-4a-yBO" id="LNn-Pv-a0c"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaylistAddSongTableViewCell" rowHeight="50" id="0tl-31-q5x">
-                                        <rect key="frame" x="0.0" y="78" width="414" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaylistAddSongTableViewCell" id="0tl-31-q5x">
+                                        <rect key="frame" x="0.0" y="78" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0tl-31-q5x" id="ce9-M2-y1y">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tim-5j-nAq">
-                                                    <rect key="frame" x="188.66666666666666" y="0.0" width="37.333333333333343" height="49.666666666666664"/>
+                                                    <rect key="frame" x="157.33333333333334" y="0.0" width="100.00000000000003" height="133.66666666666666"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-Plus" translatesAutoresizingMaskIntoConstraints="NO" id="og8-Nl-KbY">
-                                                            <rect key="frame" x="0.0" y="6" width="37.333333333333336" height="37.666666666666664"/>
+                                                            <rect key="frame" x="0.0" y="5" width="100" height="100.33333333333333"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="og8-Nl-KbY" secondAttribute="height" multiplier="1:1" id="4Ly-gY-ASp"/>
+                                                                <constraint firstAttribute="height" constant="50" id="n7R-ly-t92"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="og8-Nl-KbY" firstAttribute="centerY" secondItem="Tim-5j-nAq" secondAttribute="centerY" id="Cm6-Av-5zC"/>
+                                                        <constraint firstItem="og8-Nl-KbY" firstAttribute="top" secondItem="Tim-5j-nAq" secondAttribute="top" constant="5" id="2Dq-3X-dNo"/>
                                                         <constraint firstItem="og8-Nl-KbY" firstAttribute="width" secondItem="Tim-5j-nAq" secondAttribute="width" id="Hwc-qa-zsf"/>
+                                                        <constraint firstAttribute="bottom" secondItem="og8-Nl-KbY" secondAttribute="bottom" constant="5" id="XFR-pX-aUS"/>
                                                         <constraint firstItem="og8-Nl-KbY" firstAttribute="height" secondItem="Tim-5j-nAq" secondAttribute="height" multiplier="3:4" id="qrC-l7-OoQ"/>
                                                         <constraint firstItem="og8-Nl-KbY" firstAttribute="centerX" secondItem="Tim-5j-nAq" secondAttribute="centerX" id="xXk-SR-zC6"/>
                                                     </constraints>
@@ -328,7 +332,7 @@
         <!--Activity Controller-->
         <scene sceneID="zeP-bf-Dkc">
             <objects>
-                <viewController id="XfD-FH-thY" userLabel="Activity Controller" customClass="ActivityViewController" customModule="demoapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="XfD-FH-thY" userLabel="Activity Controller" customClass="ActivityViewController" customModule="demoapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qj2-Ji-dyS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

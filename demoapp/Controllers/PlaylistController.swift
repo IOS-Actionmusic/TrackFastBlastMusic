@@ -21,15 +21,24 @@ class PlaylistController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         playlistTableView.dataSource = self
         playlistTableView.delegate   = self
+        let request: NSFetchRequest<Song> = Song.fetchRequest()
+        let predicate = NSPredicate(format: "%K == %d", #keyPath(Song.activity.id), activity.id)
+        request.predicate = predicate
+        do {
+            let fetchedSongs = try managedObjectContext.fetch(request)
+            print(fetchedSongs)
+            playlist = fetchedSongs
+            
+        } catch {
+            fatalError("Failed to fetch playlist from core data: \(error)")
+        }
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        playlistTableView.reloadData()
     }
     
     @IBAction func addSongsButtonPressed(_ sender: Any) {
@@ -42,21 +51,31 @@ class PlaylistController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
         for song in mediaItemCollection.items {
-            //print("\(describing: song.value(forProperty: MPMediaItemPropertyTitle)) ID:\(String(describing:  song.value(forProperty: MPMediaItemPropertyPersistentID)))")
-            let music = Song(context: managedObjectContext)
-            //print("SONG: \(song)")
-            //print("ACTIVITY: \(self.activity)")
-            music.activity = self.activity
-            music.id = (song.value(forProperty: MPMediaItemPropertyPersistentID) as? Int64)!
-            music.title = song.value(forProperty: MPMediaItemPropertyTitle) as? String
-            music.artist = song.value(forProperty: MPMediaItemPropertyArtist) as? String
+            let id = (song.value(forProperty: MPMediaItemPropertyPersistentID) as? Int64)!
+            let request: NSFetchRequest<Song> = Song.fetchRequest()
+            let predicate = NSPredicate(format: "%K == %d && %K == %ld", #keyPath(Song.activity.id), activity.id, #keyPath(Song.id), id)
+            request.predicate = predicate
             do {
-                try managedObjectContext.save()
+                let count = try managedObjectContext.count(for: request)
+                print(count)
+                if (count == 0) {
+                    let music = Song(context: managedObjectContext)
+                    music.activity = self.activity
+                    music.id = id
+                    music.title = song.value(forProperty: MPMediaItemPropertyTitle) as? String
+                    music.artist = song.value(forProperty: MPMediaItemPropertyArtist) as? String
+                    do {
+                        try managedObjectContext.save()
+                        playlist.append(music)
+                    } catch {
+                        fatalError("Failure to save context: \(error)")
+                    }
+                }
             } catch {
-                fatalError("Failure to save context: \(error)")
+                fatalError("Failure to get count of id in context: \(error)")
             }
-            playlist.append(music)
         }
+        playlistTableView.reloadData()
         mediaPicker.dismiss(animated: true)
     }
     
@@ -76,7 +95,6 @@ class PlaylistController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let cell = playlistTableView.dequeueReusableCell(withIdentifier: "PlaylistAddSongTableViewCell")
-        
         return cell
     }
     
@@ -92,8 +110,11 @@ class PlaylistController: UIViewController, UITableViewDataSource, UITableViewDe
         if let items = songQuery.items {
             if (items.count > 0) {
                 let song = items[0]
-                print(song.value(forProperty: MPMediaItemPropertyArtwork) ?? -1)
-                cell.albumCover.image = (song.value(forProperty: MPMediaItemPropertyArtwork) as? MPMediaItemArtwork)?.image(at: CGSize(width:50, height: 50))
+                if let image = ((song.value(forProperty: MPMediaItemPropertyArtwork) as? MPMediaItemArtwork)?.image(at: CGSize(width:50, height: 50)))   {
+                    cell.albumCover.image = image
+                } else {
+                    cell.albumCover.image = #imageLiteral(resourceName: "iTunesArtwork")
+                }
             } else {
                 cell.albumCover.image = #imageLiteral(resourceName: "iTunesArtwork")
             }
