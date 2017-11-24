@@ -51,16 +51,17 @@
                                                     <rect key="frame" x="19.999999999999996" y="0.0" width="49.666666666666657" height="49.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ejd-5h-1tf" secondAttribute="height" multiplier="1:1" id="QtW-pW-lbk"/>
+                                                        <constraint firstAttribute="height" constant="50" id="k6C-yX-zzH"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubl-4a-yBO">
-                                                    <rect key="frame" x="77" y="3" width="317" height="20.333333333333332"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Song Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubl-4a-yBO">
+                                                    <rect key="frame" x="74.666666666666657" y="3" width="319.33333333333337" height="20.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIB-jM-ZMG">
-                                                    <rect key="frame" x="77" y="28.333333333333332" width="317" height="15.666666666666668"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIB-jM-ZMG">
+                                                    <rect key="frame" x="74.666666666666657" y="28.333333333333332" width="319.33333333333337" height="15.666666666666668"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -69,13 +70,13 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="ejd-5h-1tf" secondAttribute="bottom" id="B1G-3Y-8OF"/>
                                                 <constraint firstItem="Ubl-4a-yBO" firstAttribute="top" secondItem="TfI-sD-4iR" secondAttribute="top" constant="3" id="Km3-mU-utU"/>
-                                                <constraint firstItem="Ubl-4a-yBO" firstAttribute="leading" secondItem="ejd-5h-1tf" secondAttribute="trailing" constant="8" symbolic="YES" id="PWO-LS-jWy"/>
+                                                <constraint firstItem="Ubl-4a-yBO" firstAttribute="leading" secondItem="ejd-5h-1tf" secondAttribute="trailing" constant="5" id="PWO-LS-jWy"/>
                                                 <constraint firstItem="ejd-5h-1tf" firstAttribute="top" secondItem="TfI-sD-4iR" secondAttribute="top" id="Ttd-Uw-q4I"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eIB-jM-ZMG" secondAttribute="bottom" constant="3" id="Zb9-ja-LHV"/>
                                                 <constraint firstItem="ejd-5h-1tf" firstAttribute="height" secondItem="TfI-sD-4iR" secondAttribute="height" id="d0i-Zq-qdI"/>
                                                 <constraint firstItem="eIB-jM-ZMG" firstAttribute="top" secondItem="Ubl-4a-yBO" secondAttribute="bottom" constant="5" id="fvO-G5-hLR"/>
                                                 <constraint firstAttribute="trailing" secondItem="eIB-jM-ZMG" secondAttribute="trailing" constant="20" symbolic="YES" id="ogh-ug-0aM"/>
-                                                <constraint firstItem="eIB-jM-ZMG" firstAttribute="leading" secondItem="ejd-5h-1tf" secondAttribute="trailing" constant="8" symbolic="YES" id="sDX-B8-sLo"/>
+                                                <constraint firstItem="eIB-jM-ZMG" firstAttribute="leading" secondItem="ejd-5h-1tf" secondAttribute="trailing" constant="5" id="sDX-B8-sLo"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ubl-4a-yBO" secondAttribute="trailing" constant="20" symbolic="YES" id="seM-tj-6gZ"/>
                                                 <constraint firstItem="ejd-5h-1tf" firstAttribute="leading" secondItem="TfI-sD-4iR" secondAttribute="leading" constant="20" symbolic="YES" id="vpt-HV-sZD"/>
                                             </constraints>
@@ -249,7 +250,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scanning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGe-ab-XFU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scanning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGe-ab-XFU">
                                 <rect key="frame" x="0.0" y="108" width="414" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
@@ -523,14 +524,14 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69627530810000005" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add a playlist for this activity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fc8-nl-fob">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add a playlist for this activity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fc8-nl-fob">
                                 <rect key="frame" x="20" y="414" width="374" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="placeholder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fd5-dQ-vzU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="placeholder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fd5-dQ-vzU">
                                 <rect key="frame" x="20" y="459" width="374" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
