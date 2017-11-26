@@ -25,20 +25,16 @@ class PlayerController: UIViewController {
     let myMediaPlayer = MPMusicPlayerApplicationController.applicationQueuePlayer
     let volumeSlider = (MPVolumeView().subviews.filter { NSStringFromClass($0.classForCoder) == "MPVolumeSlider" }.first as! UISlider)
     var timer: Timer!
+    var activity: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myMediaPlayer.setQueue(with: MPMediaQuery.songs())
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
         updateSlider()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {	
-        myMediaPlayer.stop()
     }
     
     @objc func updateSlider(){
@@ -51,21 +47,11 @@ class PlayerController: UIViewController {
         albumImage.image = myMediaPlayer.nowPlayingItem?.artwork?.image(at: (albumImage.bounds.size))
     }
     
-    func updateActivityText(){
-        
-    }
-    
-    func updateActivityImage(){
-        
-    }
-    
     @IBAction func sliderVolume(_ sender: AnyObject) {
         volumeSlider.setValue(sender.value, animated: false)
     }
     
     @IBAction func playOrPause(_ sender: Any) {
-        print("playorpause")
-        print(myMediaPlayer.playbackState.rawValue)
         if (myMediaPlayer.playbackState.rawValue == 1){
             myMediaPlayer.pause()
             playBtn.setImage(UIImage(named: "icons8-Circled Play_2"), for: .normal)
