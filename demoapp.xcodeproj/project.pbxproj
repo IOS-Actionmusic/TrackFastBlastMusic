@@ -14,8 +14,8 @@
 		963B6F801F74F0AA00B2F400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 963B6F7E1F74F0AA00B2F400 /* LaunchScreen.storyboard */; };
 		963B6F8B1F74F0AB00B2F400 /* demoappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963B6F8A1F74F0AB00B2F400 /* demoappTests.swift */; };
 		963B6F961F74F0AB00B2F400 /* demoappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963B6F951F74F0AB00B2F400 /* demoappUITests.swift */; };
-		963B6FE11F75A30B00B2F400 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 963B6FDF1F75A30B00B2F400 /* Model.xcdatamodeld */; };
 		963B6FE31F75A68300B2F400 /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963B6FE21F75A68300B2F400 /* PlayerController.swift */; };
+		967053D01FCBB0850033D0B5 /* DataContainerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967053CF1FCBB0850033D0B5 /* DataContainerSingleton.swift */; };
 		96DEFD581F87F09D0073415F /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DEFD571F87F09D0073415F /* HomeController.swift */; };
 		96DEFD5C1F87F1020073415F /* PlaylistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DEFD5B1F87F1020073415F /* PlaylistController.swift */; };
 		96DEFD5E1F87F1390073415F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DEFD5D1F87F1390073415F /* SettingsController.swift */; };
@@ -59,8 +59,8 @@
 		963B6F911F74F0AB00B2F400 /* demoappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = demoappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		963B6F951F74F0AB00B2F400 /* demoappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoappUITests.swift; sourceTree = "<group>"; };
 		963B6F971F74F0AB00B2F400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		963B6FE01F75A30B00B2F400 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		963B6FE21F75A68300B2F400 /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
+		967053CF1FCBB0850033D0B5 /* DataContainerSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainerSingleton.swift; sourceTree = "<group>"; };
 		96DEFD571F87F09D0073415F /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		96DEFD5B1F87F1020073415F /* PlaylistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistController.swift; sourceTree = "<group>"; };
 		96DEFD5D1F87F1390073415F /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 				963B6F7E1F74F0AA00B2F400 /* LaunchScreen.storyboard */,
 				963B6F791F74F0AA00B2F400 /* Main.storyboard */,
 				963B6F811F74F0AA00B2F400 /* Info.plist */,
-				963B6FDF1F75A30B00B2F400 /* Model.xcdatamodeld */,
+				967053CF1FCBB0850033D0B5 /* DataContainerSingleton.swift */,
 			);
 			path = demoapp;
 			sourceTree = "<group>";
@@ -246,6 +246,11 @@
 					963B6F711F74F0AA00B2F400 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					963B6F851F74F0AA00B2F400 = {
 						CreatedOnToolsVersion = 9.0;
@@ -322,8 +327,8 @@
 				96DEFD581F87F09D0073415F /* HomeController.swift in Sources */,
 				DD92CF4D1FBF696000F69B7A /* ActivityCellTableViewCell.swift in Sources */,
 				963B6FE31F75A68300B2F400 /* PlayerController.swift in Sources */,
-				963B6FE11F75A30B00B2F400 /* Model.xcdatamodeld in Sources */,
 				DD92CF5F1FBF6C1300F69B7A /* ActivityViewController.swift in Sources */,
+				967053D01FCBB0850033D0B5 /* DataContainerSingleton.swift in Sources */,
 				DD92CF521FBF69DF00F69B7A /* ActivityRightTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -626,16 +631,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		963B6FDF1F75A30B00B2F400 /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				963B6FE01F75A30B00B2F400 /* Model.xcdatamodel */,
-			);
-			currentVersion = 963B6FE01F75A30B00B2F400 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		9AF6B1AF1FC75D1500C40C4F /* demoapp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
