@@ -55,30 +55,54 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Song Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubl-4a-yBO">
-                                                    <rect key="frame" x="74.666666666666657" y="3" width="319.33333333333337" height="20.333333333333332"/>
+                                                    <rect key="frame" x="74.666666666666657" y="3" width="284.66666666666674" height="20.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIB-jM-ZMG">
-                                                    <rect key="frame" x="74.666666666666657" y="28.333333333333332" width="319.33333333333337" height="15.666666666666668"/>
+                                                    <rect key="frame" x="74.666666666666657" y="28.333333333333332" width="284.66666666666674" height="15.666666666666668"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jqx-SX-Lws">
+                                                    <rect key="frame" x="364.33333333333331" y="0.0" width="49.666666666666686" height="49.666666666666664"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dashBlack" translatesAutoresizingMaskIntoConstraints="NO" id="ypo-UG-9z3">
+                                                            <rect key="frame" x="18.666666666666686" y="12.333333333333336" width="12.333333333333336" height="25"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="ypo-UG-9z3" secondAttribute="height" multiplier="1:2" id="28e-g6-60y"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstItem="ypo-UG-9z3" firstAttribute="centerX" secondItem="Jqx-SX-Lws" secondAttribute="centerX" id="H0x-Tq-44I"/>
+                                                        <constraint firstItem="ypo-UG-9z3" firstAttribute="centerY" secondItem="Jqx-SX-Lws" secondAttribute="centerY" id="HHN-HW-X3A"/>
+                                                        <constraint firstAttribute="width" secondItem="Jqx-SX-Lws" secondAttribute="height" multiplier="1:1" id="aNb-rO-VWZ"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="jix-j2-hTp" appends="YES" id="6pQ-wF-R8D"/>
+                                                    </connections>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="ejd-5h-1tf" secondAttribute="bottom" id="B1G-3Y-8OF"/>
                                                 <constraint firstItem="Ubl-4a-yBO" firstAttribute="top" secondItem="TfI-sD-4iR" secondAttribute="top" constant="3" id="Km3-mU-utU"/>
                                                 <constraint firstItem="Ubl-4a-yBO" firstAttribute="leading" secondItem="ejd-5h-1tf" secondAttribute="trailing" constant="5" id="PWO-LS-jWy"/>
                                                 <constraint firstItem="ejd-5h-1tf" firstAttribute="top" secondItem="TfI-sD-4iR" secondAttribute="top" id="Ttd-Uw-q4I"/>
+                                                <constraint firstAttribute="trailing" secondItem="Jqx-SX-Lws" secondAttribute="trailing" id="XUt-PQ-6VP"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eIB-jM-ZMG" secondAttribute="bottom" constant="3" id="Zb9-ja-LHV"/>
+                                                <constraint firstItem="Jqx-SX-Lws" firstAttribute="top" secondItem="TfI-sD-4iR" secondAttribute="top" id="bVE-PC-J0F"/>
                                                 <constraint firstItem="ejd-5h-1tf" firstAttribute="height" secondItem="TfI-sD-4iR" secondAttribute="height" id="d0i-Zq-qdI"/>
                                                 <constraint firstItem="eIB-jM-ZMG" firstAttribute="top" secondItem="Ubl-4a-yBO" secondAttribute="bottom" constant="5" id="fvO-G5-hLR"/>
-                                                <constraint firstAttribute="trailing" secondItem="eIB-jM-ZMG" secondAttribute="trailing" constant="20" symbolic="YES" id="ogh-ug-0aM"/>
+                                                <constraint firstItem="Jqx-SX-Lws" firstAttribute="leading" secondItem="Ubl-4a-yBO" secondAttribute="trailing" constant="5" id="jRe-gK-uLw"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jqx-SX-Lws" secondAttribute="bottom" id="pDo-br-da0"/>
                                                 <constraint firstItem="eIB-jM-ZMG" firstAttribute="leading" secondItem="ejd-5h-1tf" secondAttribute="trailing" constant="5" id="sDX-B8-sLo"/>
-                                                <constraint firstAttribute="trailing" secondItem="Ubl-4a-yBO" secondAttribute="trailing" constant="20" symbolic="YES" id="seM-tj-6gZ"/>
+                                                <constraint firstItem="Jqx-SX-Lws" firstAttribute="leading" secondItem="eIB-jM-ZMG" secondAttribute="trailing" constant="5" id="sk8-UO-WXf"/>
                                                 <constraint firstItem="ejd-5h-1tf" firstAttribute="leading" secondItem="TfI-sD-4iR" secondAttribute="leading" constant="20" symbolic="YES" id="vpt-HV-sZD"/>
+                                                <constraint firstItem="ypo-UG-9z3" firstAttribute="height" secondItem="TfI-sD-4iR" secondAttribute="height" multiplier="1:2" id="yZx-Ff-fb7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -143,9 +167,15 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oB2-1p-ADz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="YJu-hj-txI" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="OcB-fJ-LYV">
                     <connections>
                         <action selector="addSongsButtonPressed:" destination="OQW-ov-Idn" id="rEn-7R-Efp"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="jix-j2-hTp">
+                    <connections>
+                        <action selector="removeSong:" destination="YJu-hj-txI" id="eY4-HK-WDg"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -588,6 +618,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="dashBlack" width="64" height="64"/>
         <image name="icons8-Circled Play_2" width="96" height="96"/>
         <image name="icons8-Less Than Filled" width="100" height="100"/>
         <image name="icons8-More Than Filled" width="100" height="100"/>

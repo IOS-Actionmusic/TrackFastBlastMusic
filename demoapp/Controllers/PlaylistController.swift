@@ -15,13 +15,22 @@ class PlaylistController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var playlistTableView: UITableView!
     
     private var playlist = [Song]()
+    private var edit: Bool = false
     var activity: Activity!
     var managedObjectContext: NSManagedObjectContext!
     override func viewDidLoad() {
         super.viewDidLoad()
         playlistTableView.dataSource = self
         playlistTableView.delegate   = self
+        let barButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.edit, target: self, action: #selector(PlaylistController.toggleEditing));
+        self.navigationItem.rightBarButtonItems = [barButton]
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @objc func toggleEditing() {
+        playlistTableView.setEditing(!playlistTableView.isEditing, animated: false)
+        edit = !edit
+        playlistTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -86,6 +95,7 @@ class PlaylistController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         cell.title.text = playlist[indexPath.row].title
         cell.artist.text = playlist[indexPath.row].artist
+        cell.setEditing(true, animated: true)
         let predicate = MPMediaPropertyPredicate(value: playlist[indexPath.row].id, forProperty: MPMediaItemPropertyPersistentID)
         let songQuery = MPMediaQuery()
         songQuery.addFilterPredicate(predicate)
@@ -101,5 +111,28 @@ class PlaylistController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
+
+    
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete
+        {
+            playlist.remove(at: indexPath.row)
+            playlistTableView.deleteRows(at: [indexPath], with: .fade)
+            let fetchRequest: NSFetchRequest<Song> = Song.fetchRequest()
+            fetchRequest.predicate = NSPredicate.init(format: "id == \(playlist[indexPath.row].id)")
+            if let result = try? managedObjectContext.fetch(fetchRequest) {
+                for object in result {
+                    managedObjectContext.delete(object)
+                }
+            }
+            // Delete for CoreData
+            playlistTableView.reloadData()
+        }
+    }
     
 }

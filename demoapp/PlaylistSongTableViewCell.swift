@@ -14,6 +14,9 @@ class PlaylistSongTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var artist: UILabel!
     
+    @IBAction func removeSong(_ sender: Any) {
+        
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
